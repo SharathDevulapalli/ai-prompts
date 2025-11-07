@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-size: 100%;
+  }
+
+  body {
+    @apply antialiased bg-parchment text-ink font-body;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display text-ink;
+  }
+}
+
+@layer components {
+  .magazine-container {
+    @apply mx-auto px-6 sm:px-10 lg:px-16 max-w-magazine;
+  }
+
+  .magazine-grid {
+    @apply grid gap-y-12 md:gap-y-16;
+  }
+
+  .magazine-grid.spread {
+    @apply md:grid-cols-2 md:gap-x-14 lg:gap-x-24;
+  }
+
+  .magazine-grid.single {
+    @apply max-w-prose mx-auto;
+  }
+}
+
+@layer utilities {
+  .responsive-body {
+    font-size: clamp(1rem, 0.9rem + 0.5vw, 1.2rem);
+    line-height: 1.75;
+  }
+
+  .responsive-heading {
+    font-size: clamp(2rem, 1.6rem + 1.2vw, 3.4rem);
+    letter-spacing: -0.02em;
+  }
+
+  .responsive-subheading {
+    font-size: clamp(1.2rem, 1rem + 0.6vw, 2rem);
+    letter-spacing: -0.01em;
+  }
+}
